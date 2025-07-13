@@ -1,6 +1,7 @@
 package main
 
 import (
+
 	"fmt"
 	"github.com/juliofilizzola/bot_discord/adpter/input/routes"
 	"github.com/juliofilizzola/bot_discord/application/convert"
@@ -37,9 +38,8 @@ func main() {
 	_, err = db.ConnectDB()
 	routes.InitRoutes(&r.RouterGroup, webController)
 
+	db.ConnectDB()
 	if err = r.Run(env.Port); err != nil {
-		fmt.Println("", err)
-
 		log.Fatal(err)
 	}
 }

@@ -11,4 +11,3 @@ func SetEnvTerminal() {
 		log.Fatal(err)
 	}
 
-}
